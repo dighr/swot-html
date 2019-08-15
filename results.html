@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="/assets/favicon.ico" type="image/x-icon" rel="icon">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css">
+
+  <title>Safe Water Optimization Tools</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <nav class="navbar navbar-expand-lg bg-swot-dark-blue shadow-sm" id="top-scroll">
+    <div class="container w-100">
+      <a href="/"><img class="main-logo" src="/assets/SWOT_LOGO.png" alt="swot logo"></a>
+      <button class="navbar-toggler collapsed first-button" type="button" data-toggle="collapse"
+        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <div class="animated-icon1"><span></span><span></span><span></span></div>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link link" href="/">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="/download.html">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="/upload.html">Upload</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link link" href="/results.html">Results</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="/archived.html">Archived</a>
+          </li>
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <button class="btn btn-lg btn-outline-primary my-2 my-sm-0" type="button" data-toggle="modal"
+            data-target="#LoginModal">LOGOUT</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main role="main" class="flex-shrink-0">
+
+    <div class="container">
+      <div class=" pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">A tool designed to ensure the water at your campsite is safe enough to drink.</h1>
+      </div>
+    </div>
+
+    <div class="container mb-4">
+      <div class="select">
+        <select class="form-control" id="locale">
+          <option value="en-US" selected>CAMP 001</option>
+          <option value="fr-FR">CAMP 002</option>
+          <option value="de-DE">CAMP 003</option>
+        </select>
+      </div>
+
+      <div id="toolbar">
+        <button id="remove" class="btn btn-danger" disabled>
+          <i class="glyphicon glyphicon-remove"></i> Archive
+        </button>
+      </div>
+
+      <table id="table" data-toolbar="#toolbar" data-search="false" data-show-refresh="true" data-show-toggle="true"
+        data-show-fullscreen="false" data-show-columns="true" data-detail-view="false" data-show-export="true"
+        data-click-to-select="true" data-detail-formatter="detailFormatter" data-minimum-count-columns="2"
+        data-show-pagination-switch="false" data-pagination="true" data-id-field="id" data-page-size="10"
+        data-page-list="[10, 25, 50, 100, all]" data-show-footer="false" data-side-pagination="local"
+        data-url="/assets/examledata.json" data-response-handler="responseHandler">
+      </table>
+
+    </div>
+
+  </main>
+
+  <footer class="mt-auto">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="/contactus.html">Contact Us</a></li>
+        <li><a href="/howitworks.html">How it Works</a></li>
+        <li><a href="/termsofuse.html">Terms of Use</a></li>
+        <li><a href="/privacypolicies.html">Privacy Policies</a></li>
+      </ul>
+      <p class="text-right mt-1 mb-0"><small>Copyright © 2019</small></p>
+    </div>
+  </footer>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="LoginModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">LOGIN</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+            <div class="form-group">
+              <label for="uname1">Username</label>
+              <input type="text" class="form-control form-control-lg" name="uname1" id="uname1" required="">
+              <div class="invalid-feedback">Oops, you missed this one.</div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control form-control-lg" id="pwd1" required=""
+                autocomplete="new-password">
+              <div class="invalid-feedback">Enter your password too!</div>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <a href="" class="float-right">Forgot password?</a>
+              <input type="checkbox" class="custom-control-input" id="rememberMe">
+              <label class="custom-control-label" for="rememberMe">Remember me</label>
+            </div>
+            <div class="form-group pt-4">
+              <button class="btn btn-danger btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
+              <button type="submit" class="btn btn-primary btn-lg float-right" id="btnLogin">Login</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table-locale-all.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/extensions/export/bootstrap-table-export.min.js"></script>
+  <script src="https://kit.fontawesome.com/3a16ab57e5.js"></script>
+  <!-- Optional JavaScript -->
+  <script>
+    $(document).ready(function () {
+      $('.first-button').on('click', function () {
+        $('.animated-icon1').toggleClass('open');
+      });
+      $('.second-button').on('click', function () {
+        $('.animated-icon2').toggleClass('open');
+      });
+      $('.third-button').on('click', function () {
+        $('.animated-icon3').toggleClass('open');
+      });
+    });
+  </script>
+  <!--https://examples.bootstrap-table.com/-->
+  <script>
+    var $table = $('#table')
+    var $remove = $('#remove')
+    var selections = []
+
+    function getIdSelections() {
+      return $.map($table.bootstrapTable('getSelections'), function (row) {
+        return row.id
+      })
+    }
+
+    function responseHandler(res) {
+      $.each(res.rows, function (i, row) {
+        row.state = $.inArray(row.id, selections) !== -1
+      })
+      return res
+    }
+
+    function detailFormatter(index, row) {
+      var html = []
+      $.each(row, function (key, value) {
+        html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+      })
+      return html.join('')
+    }
+
+    window.operateEvents = {
+      'click .like': function (e, value, row, index) {
+        alert('You click like action, row: ' + JSON.stringify(row))
+      },
+      'click .remove': function (e, value, row, index) {
+        $table.bootstrapTable('remove', {
+          field: 'id',
+          values: [row.id]
+        })
+      }
+    }
+
+    function totalTextFormatter(data) {
+      return 'Total'
+    }
+
+    function totalNameFormatter(data) {
+      return data.length
+    }
+
+    function initTable() {
+      $table.bootstrapTable('destroy').bootstrapTable({
+        locale: $('#locale').val(),
+        columns: [
+          [{
+            field: 'state',
+            checkbox: true,
+            rowspan: 2,
+            align: 'center',
+            valign: 'middle'
+          }, {
+            title: 'ARCHIVED REPORT TABLE',
+            colspan: 4,
+            align: 'center'
+          }],
+          [{
+            field: 'name',
+            title: 'FILE NAME',
+            sortable: true,
+            footerFormatter: totalNameFormatter,
+            align: 'center'
+          }, {
+            field: 'uploadDate',
+            title: 'DATE UPLOADED',
+            sortable: true,
+            align: 'center',
+            footerFormatter: totalNameFormatter,
+            align: 'center'
+          }, {
+            field: 'location',
+            title: 'CAMP',
+            sortable: true,
+            align: 'center',
+            footerFormatter: totalNameFormatter,
+            align: 'center'
+          }, {
+            field: 'status',
+            title: 'STATUS',
+            sortable: true,
+            align: 'center',
+            footerFormatter: totalNameFormatter,
+            align: 'center'
+          }]
+        ]
+      })
+      $table.on('check.bs.table uncheck.bs.table ' +
+        'check-all.bs.table uncheck-all.bs.table',
+        function () {
+          $remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
+
+          // save your data, here just save the current page
+          selections = getIdSelections()
+          // push or splice the selections if you want to save all data selections
+        })
+      $table.on('all.bs.table', function (e, name, args) {
+        console.log(name, args)
+      })
+      $remove.click(function () {
+        var ids = getIdSelections()
+        $table.bootstrapTable('remove', {
+          field: 'id',
+          values: ids
+        })
+        $remove.prop('disabled', true)
+      })
+    }
+
+    $(function () {
+      initTable()
+      $('#locale').change(initTable)
+    })
+  </script>
+</body>
+
+</html>

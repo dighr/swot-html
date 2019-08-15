@@ -1,0 +1,173 @@
+{
+    "total": 20,
+    "totalNotFiltered": 20,
+    "rows": [{
+            "id": 0,
+            "name": "Item 0",
+            "uploadDate": "12/24/2019",
+            "location": "Toronto",
+            "status": "Success",
+            "price": "$0"
+        },
+        {
+            "id": 1,
+            "name": "Item 1",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$1"
+        },
+        {
+            "id": 2,
+            "name": "Item 2",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$2"
+        },
+        {
+            "id": 3,
+            "name": "Item 3",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$3"
+        },
+        {
+            "id": 4,
+            "name": "Item 4",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$4"
+        },
+        {
+            "id": 5,
+            "name": "Item 5",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$5"
+        },
+        {
+            "id": 6,
+            "name": "Item 6",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$6"
+        },
+        {
+            "id": 7,
+            "name": "Item 7",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$7"
+        },
+        {
+            "id": 8,
+            "name": "Item 8",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$8"
+        },
+        {
+            "id": 9,
+            "name": "Item 9",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$9"
+        },
+        {
+            "id": 10,
+            "name": "Item 10",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$10"
+        },
+        {
+            "id": 11,
+            "name": "Item 11",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$11"
+        },
+        {
+            "id": 12,
+            "name": "Item 12",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$12"
+        },
+        {
+            "id": 13,
+            "name": "Item 13",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$13"
+        },
+        {
+            "id": 14,
+            "name": "Item 14",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$14"
+        },
+        {
+            "id": 15,
+            "name": "Item 15",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$15"
+        },
+        {
+            "id": 16,
+            "name": "Item 16",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$16"
+        },
+        {
+            "id": 17,
+            "name": "Item 17",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$17"
+        },
+        {
+            "id": 18,
+            "name": "Item 18",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$18"
+        },
+        {
+            "id": 19,
+            "name": "Item 19",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$19"
+        },
+        {
+            "id": 20,
+            "name": "Item 20",
+            "uploadDate": "",
+            "location": "",
+            "status": "",
+            "price": "$20"
+        }
+    ]
+}
